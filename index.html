@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>haben und sein</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#1b2440;--mute:#5b6480;--line:#dfe3ee;--h:#e8a317;--hs:#fff3d1;--s:#3a4bd1;--ss:#e6e9ff;--ok:#1d8a5a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12162a;--card:#1b2140;--ink:#eef0fb;--mute:#a4abc9;--line:#2c345c;--h:#f2b93b;--hs:#3a3015;--s:#8c98ff;--ss:#262d63;--ok:#4cd39a}}
+:root[data-theme="dark"]{--bg:#12162a;--card:#1b2140;--ink:#eef0fb;--mute:#a4abc9;--line:#2c345c;--h:#f2b93b;--hs:#3a3015;--s:#8c98ff;--ss:#262d63;--ok:#4cd39a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Source Sans 3",system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;margin:0}
+h2{font-size:1.7rem;margin:48px 0 14px}
+p{margin:0 0 12px;max-width:68ch}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.big{border:0;border-radius:20px;padding:28px 16px;cursor:pointer;text-align:left;color:var(--ink);font:inherit}
+.big b{display:block;font:800 clamp(2.4rem,10vw,4.4rem)/1 "Bricolage Grotesque",sans-serif}
+.big small{display:block;margin-top:8px;color:var(--mute)}
+.big.h{background:var(--hs)}.big.h b{color:var(--h)}
+.big.s{background:var(--ss)}.big.s b{color:var(--s)}
+.big:hover{outline:2px solid currentColor}
+.lead{margin-top:18px;font-size:1.1rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.grid,.hero{grid-template-columns:1fr}}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.box.h{border-top:5px solid var(--h)}.box.s{border-top:5px solid var(--s)}
+.box h3{font-size:1.25rem;margin-bottom:8px}
+.box ul{margin:0;padding-left:20px}.box li{margin-bottom:6px}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:320px}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-family:"Bricolage Grotesque",sans-serif}
+th.h{background:var(--hs)}th.s{background:var(--ss)}
+.w{border:0;background:none;font:600 1.1rem "Source Sans 3",sans-serif;color:var(--ink);cursor:pointer;padding:2px 0;text-align:left}
+.w::after{content:" 🔊";font-size:.8rem;opacity:.55}
+.w:hover{text-decoration:underline}
+.ex{display:grid;gap:10px}
+.ex .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.ex .de{font-weight:600}
+.hb{color:var(--h);font-weight:800}.sn{color:var(--s);font-weight:800}
+.q{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font:inherit;color:var(--ink);cursor:pointer;margin-bottom:10px}
+.q:hover{border-color:var(--s)}
+.q .blank{display:inline-block;min-width:64px;border-bottom:2px dashed var(--mute);text-align:center;font-weight:800}
+.q .ans{display:none;margin-top:8px;color:var(--mute);font-size:.95rem}
+.q.open .ans{display:block}
+.q.open .blank{border-bottom:2px solid var(--ok);color:var(--ok)}
+.q .tag{font-size:.8rem;color:var(--mute);float:right}
+.tip{background:var(--hs);border-left:5px solid var(--h);padding:12px 16px;border-radius:8px;margin-top:14px}
+.btns{display:flex;gap:8px;margin:0 0 14px;flex-wrap:wrap}
+.btns button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 16px;font:inherit;cursor:pointer}
+footer{max-width:860px;margin:0 auto;padding:20px 16px 32px;border-top:1px solid var(--line);text-align:center;color:var(--mute);font-size:.95rem}
+footer b{color:var(--ink);font-family:"Bricolage Grotesque",system-ui,sans-serif}
+:focus-visible{outline:3px solid var(--s);outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){.q .ans{animation:f .25s}@keyframes f{from{opacity:0}to{opacity:1}}}
+</style>
+</head>
+<body>
+<main>
+<h1 style="font-size:clamp(1.6rem,5vw,2.2rem)">haben und sein</h1>
+<p style="color:var(--mute)">Die zwei wichtigsten Verben im Deutschen. Tippe auf ein Wort mit 🔊, um es zu hören.</p>
+
+<div class="hero">
+  <button class="big h" data-say="haben"><b>haben</b><small>ich habe · du hast</small></button>
+  <button class="big s" data-say="sein"><b>sein</b><small>ich bin · du bist</small></button>
+</div>
+<p class="lead"><span class="hb">haben</span> sagt, was du <i>hast</i>. <span class="sn">sein</span> sagt, wer oder wie du <i>bist</i>. Beide Verben sind unregelmäßig, deshalb lernt man die Formen auswendig.</p>
+
+<h2>Konjugation</h2>
+<div class="scroll">
+<table>
+<thead><tr><th>Pronomen</th><th class="h">haben</th><th class="s">sein</th></tr></thead>
+<tbody id="tb"></tbody>
+</table>
+</div>
+
+<h2>Wofür brauchen wir sie?</h2>
+<div class="grid">
+  <div class="box h"><h3>haben</h3><ul>
+    <li>Besitz: <b>Ich habe ein Buch.</b></li>
+    <li>Familie und Freunde: <b>Sie hat zwei Brüder.</b></li>
+    <li>Gefühle und Bedürfnisse: <b>Ich habe Hunger / Durst / Angst.</b></li>
+    <li>Zeit und Pläne: <b>Wir haben Zeit.</b></li></ul></div>
+  <div class="box s"><h3>sein</h3><ul>
+    <li>Identität und Beruf: <b>Er ist Lehrer.</b></li>
+    <li>Herkunft: <b>Ihr seid aus Ägypten.</b></li>
+    <li>Alter: <b>Ich bin 25 Jahre alt.</b></li>
+    <li>Beschreibung und Zustand: <b>Das Wetter ist schön. Du bist müde.</b></li></ul></div>
+</div>
+
+<h2>Wann nehme ich welches Verb?</h2>
+<div class="grid">
+  <div class="box"><h3>Frag dich</h3><ul>
+    <li>Geht es um Besitz, Familie, Hunger, Durst oder Zeit? Dann <span class="hb">haben</span>.</li>
+    <li>Geht es um Beruf, Herkunft, Alter, Ort oder Eigenschaft? Dann <span class="sn">sein</span>.</li>
+    </ul></div>
+  <div class="box"><h3>Achtung</h3><ul>
+    <li>Hunger, Durst, Angst: <b>Ich <span class="hb">habe</span> Hunger.</b></li>
+    <li>Kälte: <b>Mir ist kalt</b> oder <b>Ich friere.</b></li>
+    <li>Alter: <b>Ich <span class="sn">bin</span> 25.</b> (nicht: Ich habe 25.)</li></ul></div>
+</div>
+
+<h2>Beispiele</h2>
+<div class="ex" id="ex"></div>
+
+<h2>Übung: Tippe auf einen Satz, um die Antwort zu sehen</h2>
+<div class="btns"><button id="show">Alle Antworten zeigen</button><button id="hide">Alle ausblenden</button></div>
+<div id="qs"></div>
+<div class="tip"><b>Merkhilfe:</b> Sachen und Bedürfnisse: haben. Wer, was, wo oder wie: sein.</div>
+</main>
+<footer>Made by <b>Donia Magdy</b></footer>
+
+<script>
+function say(t){try{var u=new SpeechSynthesisUtterance(t);u.lang="de-DE";u.rate=.85;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+var C=[["ich","habe","bin"],["du","hast","bist"],["er / sie / es","hat","ist"],["wir","haben","sind"],["ihr","habt","seid"],["sie / Sie","haben","sind"]];
+function b(t){return '<button class="w" data-say="'+t+'">'+t+'</button>'}
+document.getElementById("tb").innerHTML=C.map(function(r){return "<tr><td>"+r[0]+"</td><td>"+b(r[1])+"</td><td>"+b(r[2])+"</td></tr>"}).join("");
+var E=["Ich <i class='hb'>habe</i> einen Bruder.","Du <i class='hb'>hast</i> Glück.","Sie <i class='hb'>hat</i> heute Geburtstag.","Wir <i class='hb'>haben</i> Hunger.","Ich <i class='sn'>bin</i> Studentin.","Du <i class='sn'>bist</i> sehr nett.","Er <i class='sn'>ist</i> in Kairo.","Ihr <i class='sn'>seid</i> spät."];
+document.getElementById("ex").innerHTML=E.map(function(e){var p=e.replace(/<[^>]+>/g,"");return "<div class='row'><button class='w de' data-say=\""+p+"\">"+e+"</button></div>"}).join("");
+var Q=[["Ich ___ Durst.","habe","Bedürfnisse und Gefühle wie Hunger, Durst, Angst: haben.","haben"],["Er ___ Lehrer.","ist","Beruf oder Identität: sein.","sein"],["Wir ___ einen Hund.","haben","Besitz: haben.","haben"],["Du ___ müde.","bist","Zustand: sein.","sein"],["Ihr ___ aus Ägypten.","seid","Herkunft: sein. ihr → seid.","sein"],["Sie (Plural) ___ zwei Kinder.","haben","Familie: haben.","haben"],["Ich ___ 25 Jahre alt.","bin","Alter: sein.","sein"],["Das Wetter ___ schön.","ist","Beschreibung: sein.","sein"]];
+document.getElementById("qs").innerHTML=Q.map(function(q,i){var t=q[0].replace("___","<span class='blank'>?</span>");return "<button class='q' data-i='"+i+"'><span class='tag'>tippen</span>"+t+"<div class='ans'><b>"+q[1]+"</b> ("+q[3]+"). "+q[2]+"</div></button>"}).join("");
+function open_(el,on){el.classList.toggle("open",on);var i=+el.dataset.i,bl=el.querySelector(".blank");bl.textContent=on?Q[i][1]:"?"}
+document.addEventListener("click",function(e){
+var s=e.target.closest("[data-say]");if(s){say(s.dataset.say);return}
+var q=e.target.closest(".q");if(q){var on=!q.classList.contains("open");open_(q,on);if(on)say(Q[+q.dataset.i][0].replace("___",Q[+q.dataset.i][1]))}});
+document.getElementById("show").onclick=function(){document.querySelectorAll(".q").forEach(function(x){open_(x,true)})};
+document.getElementById("hide").onclick=function(){document.querySelectorAll(".q").forEach(function(x){open_(x,false)})};
+</script>
+</body>
+</html>
